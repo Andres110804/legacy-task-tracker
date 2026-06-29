@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legacy Task Tracker</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="task-card" aria-labelledby="app-title">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Clase de debugging</p>
+            <h1 id="app-title">Legacy Task Tracker</h1>
+          </div>
+          <span class="status-dot" aria-hidden="true"></span>
+        </header>
+
+        <form class="task-form" id="task-form">
+          <label for="task-input">Nueva tarea</label>
+          <div class="input-row">
+            <input
+              id="task-input"
+              name="task"
+              type="text"
+              autocomplete="off"
+              placeholder="Ej. Revisar pull request"
+            />
+            <button type="submit">Agregar</button>
+          </div>
+        </form>
+
+        <section class="stats" aria-label="Resumen de tareas">
+          <article>
+            <strong id="total-count">0</strong>
+            <span>Total</span>
+          </article>
+          <article>
+            <strong id="completed-count">0</strong>
+            <span>Completadas</span>
+          </article>
+          <article>
+            <strong id="pending-count">0</strong>
+            <span>Pendientes</span>
+          </article>
+        </section>
+
+        <div class="toolbar">
+          <div class="filters" aria-label="Filtros">
+            <button class="filter-button active" data-filter="all" type="button">Todas</button>
+            <button class="filter-button" data-filter="active" type="button">Activas</button>
+            <button class="filter-button" data-filter="completed" type="button">Completadas</button>
+          </div>
+          <button class="clear-button" id="clear-completed" type="button">Limpiar completadas</button>
+        </div>
+
+        <p class="empty-message" id="empty-message">No hay tareas por mostrar.</p>
+        <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="/src/script.js"></script>
+  </body>
+</html>
