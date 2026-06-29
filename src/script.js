@@ -94,7 +94,7 @@ function addTask(event) {
 
   const newTask = createTask(taskInput.value);
   tasks.push(newTask);
-  taskInput.value = taskInput.value.trim();
+  taskInput.value = "";
   renderTasks();
 }
 
