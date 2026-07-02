@@ -1,4 +1,4 @@
-const form = document.querySelector("#task-form")
+const form = document.querySelector("#task-form");
 const taskInput = document.querySelector("#task-input");
 const taskList = document.querySelector("#task-list");
 const emptyMessage = document.querySelector("#empty-state");
@@ -60,6 +60,7 @@ function updateEmptyMessage(visibleTasks) {
 
 function renderTasks() {
   const visibleTasks = getVisibleTasks();
+  taskList.innerHTML = "";
 
   visibleTasks.forEach((task, index) => {
     const item = document.createElement("li");
